@@ -33,7 +33,7 @@ public class EmailService {
             String message = objectMapper.writeValueAsString(object);
             return message;
         } catch (JsonProcessingException e) {
-            throw new RuntimeException("Json 직렬화 실패");
         }
+        throw new RuntimeException("Json 직렬화 실패");
     }
 }
