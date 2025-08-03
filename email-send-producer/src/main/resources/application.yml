@@ -1,7 +1,7 @@
 spring:
   kafka:
     # Kafka ?? ??
-    bootstrap-servers: 52.79.237.50:9092
+    bootstrap-servers: 3.37.130.149:9092
     producer:
       # ???? key ??? ?? : ?? ??? ???(String)? ???? Kafka? ??
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
