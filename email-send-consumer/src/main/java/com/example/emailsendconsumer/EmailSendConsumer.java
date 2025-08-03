@@ -13,7 +13,8 @@ public class EmailSendConsumer {
     )
     @RetryableTopic(
         attempts = "5", // 재시도 총 5회 (재시도 너무 많으면 시스템 부하)
-        backoff = @Backoff(delay = 1000, multiplier = 2)    // 1초 간격 재시도, 2배수씩(1초 > 2초 > 4초 ..)
+        backoff = @Backoff(delay = 1000, multiplier = 2),    // 1초 간격 재시도, 2배수씩(1초 > 2초 > 4초 ..)
+        dltTopicSuffix = ".dlt" // dlt topic명: email.send.dlt
     )
     public void consume(String message) {
         System.out.println("Kafka로부터 받아온 메시지: " + message);
